@@ -46,10 +46,12 @@ function FeedbackForm () {
         });
     };
 
-    const feelingInput = useSelector((store) => store.feelingReducer);
-    const understandingInput = useSelector((store) => store.understandingReducer);
-    const supportInput = useSelector((store) => store.supportReducer);
-    const commentInput = useSelector((store) => store.commentReducer);
+    // const feelingInput = useSelector((store) => store.feelingReducer);
+    // const understandingInput = useSelector((store) => store.understandingReducer);
+    // const supportInput = useSelector((store) => store.supportReducer);
+    // const commentInput = useSelector((store) => store.commentReducer);
+
+    //console.log(feelingInput);
 
     //this may be redundant???? Could maybe just use one reducer??
     const collectInputs = (event) => {
@@ -121,7 +123,7 @@ function FeedbackForm () {
             placeholder="add comments"
           />
           <button type="submit">Next</button>
-          
+
         </form>
       );
 

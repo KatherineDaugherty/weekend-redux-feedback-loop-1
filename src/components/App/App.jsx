@@ -4,9 +4,13 @@ import React, { useEffect, useState } from "react";
 import { Route, HashRouter as Router, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
+import FeedbackReview from '../FeedbackReview/FeedbackReview';
+import { createStore, combineReducers, applyMiddleware } from "redux";
+
 
 function App() {
 
+ 
 
 
   return (
@@ -21,7 +25,7 @@ function App() {
       <FeedbackForm />
     </div>
     <div>
-      {/* <FeedbackReview /> */}
+      <FeedbackReview />
     </div>
     <div>
       {/* <FeedbackSuccess /> */}
