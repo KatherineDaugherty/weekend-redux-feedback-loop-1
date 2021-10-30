@@ -30,6 +30,10 @@ const feelingReducer = (state = {}, action) => {
         
         // return { ...action.payload };
     } 
+    else if (action.type === "CLEAR_FEEDBACK") {
+        console.log(action.payload);
+        return {};
+    }
     //else return state is required for initial page load, even if user will be required to
     //fill in inputs
     return state; //default return in the case nothing is triggered

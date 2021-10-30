@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import FeedbackReview from '../FeedbackReview/FeedbackReview';
 import { createStore, combineReducers, applyMiddleware } from "redux";
+import FeedbackSuccess from '../FeedbackSuccess/FeedbackSuccess';
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
       <FeedbackReview />
     </div>
     <div>
-      {/* <FeedbackSuccess /> */}
+      <FeedbackSuccess />
     </div>
     </Router>
   );
