@@ -6,15 +6,21 @@ import FeedbackForm from "../FeedbackForm/FeedbackForm";
 
 function FeedbackReview () {
 
-    // get the input data from the store
-    //const inputData = useSelector((store) => store.feelingReducer);
-    //const cartPizzas = useSelector((store) => store.cartReducer);
-    //console.log(store.feelingReducer);
-
     const feelingInput = useSelector((store) => store.feelingReducer);
-    const understandingInput = useSelector((store) => store.understandingReducer);
-    const supportInput = useSelector((store) => store.supportReducer);
-    const commentInput = useSelector((store) => store.commentReducer);
+
+    //when submit button clicked, post to DB & send to success page
+    const handleSubmit = () => {
+
+        console.log('clicked');
+      
+        //post to server
+        axios.post('/feedback', feelingInput)
+        .then(response => {
+        console.log('posted', response)
+        }).catch (error => {
+        console.log('error', error )
+        })
+    }
 
   return (
     <>
@@ -22,7 +28,7 @@ function FeedbackReview () {
     <p>{feelingInput.understanding}</p>
     <p>{feelingInput.support}</p>
     <p>{feelingInput.comments}</p>
-    <button>Submit</button>
+    <button onClick={handleSubmit} >Submit</button>
     </>
   )   
 
