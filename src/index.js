@@ -15,15 +15,19 @@ import logger from "redux-logger";
 //     </Provider>,
 //     document.getElementById("root")
 //   );
-  registerServiceWorker();
+registerServiceWorker();
 
 //reducer for feeling input **unsure about correct use of objects??
 //how to make it so that the user must input something before moving on?
 const feelingReducer = (state = {}, action) => {
     //if-else statements for different actions
     //action for adding feeling input
+    
+    //console.log(action.payload);
     if (action.type === "ADD_FEELING") {
+        console.log(action.payload);
         return { ...state, ...action.payload };
+        
         // return { ...action.payload };
     } 
     //else return state is required for initial page load, even if user will be required to
