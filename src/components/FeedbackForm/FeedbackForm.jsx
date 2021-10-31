@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { Route, HashRouter as Router, Link } from "react-router-dom";
 
 function FeedbackForm () {
 
@@ -87,44 +88,68 @@ function FeedbackForm () {
         //   type: "",
         // });
 
-        //history.push("/checkout");
+        //history.push("/review");
       };
 
     return (
+      
         <form onSubmit={(event) => collectInputs(event)}>
+          {/* <Route path="/" exact> */}
           <input
             onChange={handleFeelingChange}
             type="number"
             value={inputObject.feeling}
             placeholder="Feeling?"
           />
+          {/* <nav> */}
+          
           <button type="submit">Next</button>
+          {/* <button type="submit"><Link to="/understanding">Next</Link></button> */}
+          {/* </nav>
+          </Route> */}
     
+          {/* <Route path="/understanding" exact> */}
           <input
             onChange={handleUnderstandingChange}
             type="number"
             value={inputObject.understanding}
             placeholder="Understanding?"
           />
+          {/* <nav> */}
+          {/* <button type="submit"><Link to="/support">Next</Link></button> */}
           <button type="submit">Next</button>
+          {/* </nav> */}
+          
+          {/* </Route> */}
 
+          {/* <Route path="/support" exact> */}
           <input
             onChange={handleSupportChange}
             type="number"
             value={inputObject.support}
             placeholder="Support?"
           />
+          {/* <nav> */}
+          {/* <button type="submit"><Link to="/comments">Next</Link></button> */}
           <button type="submit">Next</button>
+          {/* </nav> */}
+          {/* </Route> */}
 
+          {/* <Route path="/comments" exact> */}
           <input
             onChange={handleCommentsChange}
             type="text"
             value={inputObject.comments}
             placeholder="add comments"
           />
+          {/* <nav> */}
+          {/* <button type="submit"><Link to="/review">Next</Link></button> */}
           <button type="submit">Next</button>
+          {/* </nav> */}
+          {/* </Route> */}
 
         </form>
+        
       );
 
 }

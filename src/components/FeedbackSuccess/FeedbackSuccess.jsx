@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import FeedbackForm from "../FeedbackForm/FeedbackForm";
 import { useState } from "react";
+import { Route, HashRouter as Router, Link } from "react-router-dom";
 
 
 function FeedbackSuccess () {
@@ -22,11 +23,14 @@ function FeedbackSuccess () {
 const clearInputs = (event) => {
     event.preventDefault();
     dispatch({type: 'CLEAR_FEEDBACK', payload: inputObject, });
+    history.push('/');
 }
 
 return (
     
-    <button onClick={clearInputs}>Leave New Feedback</button>
+    // <button onClick={clearInputs}>Leave New Feedback</button>
+    <nav ><Link to="/" type="submit"></Link><button onClick={clearInputs}>Submit</button></nav>
+
     
 )    
 
