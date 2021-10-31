@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { Route, HashRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CommentsForm () {
     const dispatch = useDispatch();
@@ -15,7 +15,6 @@ function CommentsForm () {
     });
 
     const handleCommentsChange = (event) => {
-        //console.log("clicked");
         setInputObject({
           ...inputObject,
           comments: event.target.value,
@@ -36,14 +35,12 @@ function CommentsForm () {
     return (
       
         <form onSubmit={(event) => collectCommentsInput(event)}>
-          {/* <Route path="/" exact> */}
           <input
             onChange={handleCommentsChange}
             type="text"
             value={inputObject.comments}
             placeholder="Comments?"
           />
-          {/* <button type="submit">Next</button> */}
           <nav ><Link to="/review" type="submit"></Link><button type="submit">Next</button></nav>
           </form>
         

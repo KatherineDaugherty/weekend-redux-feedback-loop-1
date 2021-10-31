@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { Route, HashRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function UnderstandingForm () {
     const dispatch = useDispatch();
@@ -15,7 +15,6 @@ function UnderstandingForm () {
     });
 
     const handleUnderstandingChange = (event) => {
-        //console.log("clicked");
         setInputObject({
           ...inputObject,
           understanding: event.target.value,
@@ -36,14 +35,12 @@ function UnderstandingForm () {
     return (
       
         <form onSubmit={(event) => collectUnderstandingInput(event)}>
-          {/* <Route path="/" exact> */}
           <input
             onChange={handleUnderstandingChange}
             type="number"
             value={inputObject.understanding}
             placeholder="Understanding?"
           />
-          {/* <button type="submit">Next</button> */}
           
           <nav ><Link to="/support" type="submit"></Link><button type="submit">Next</button></nav>
           

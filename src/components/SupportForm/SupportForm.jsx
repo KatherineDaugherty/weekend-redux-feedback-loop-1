@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 function SupportForm () {
@@ -14,7 +14,6 @@ function SupportForm () {
     });
 
     const handleSupportChange = (event) => {
-        //console.log("clicked");
         setInputObject({
           ...inputObject,
           support: event.target.value,
@@ -35,7 +34,6 @@ function SupportForm () {
     return (
       
         <form onSubmit={(event) => collectSupportInput(event)}>
-          {/* <Route path="/" exact> */}
           <input
             onChange={handleSupportChange}
             type="number"

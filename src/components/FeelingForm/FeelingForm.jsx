@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { Route, HashRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function FeelingForm () {
     const dispatch = useDispatch();
@@ -15,7 +15,6 @@ function FeelingForm () {
     });
 
     const handleFeelingChange = (event) => {
-        //console.log("clicked");
         setInputObject({
           ...inputObject,
           feeling: event.target.value,
@@ -36,20 +35,17 @@ function FeelingForm () {
     return (
       
         <form onSubmit={(event) => collectFeelingInput(event)}>
-          {/* <Route path="/" exact> */}
           <input
             onChange={handleFeelingChange}
             type="number"
             value={inputObject.feeling}
             placeholder="Feeling?"
           />
-          {/* <button type="submit">Next</button> */}
           <nav ><Link to="/understanding" type="submit"></Link><button type="submit">Next</button></nav>
           </form>
         
         );
   
   }
-
 
 export default FeelingForm;
