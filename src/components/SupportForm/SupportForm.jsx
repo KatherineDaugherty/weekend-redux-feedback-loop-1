@@ -34,6 +34,7 @@ function SupportForm () {
     return (
       
         <form onSubmit={(event) => collectSupportInput(event)}>
+          <h3>How well are you being supported?</h3>
           <input
             onChange={handleSupportChange}
             type="number"

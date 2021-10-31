@@ -35,11 +35,12 @@ function CommentsForm () {
     return (
       
         <form onSubmit={(event) => collectCommentsInput(event)}>
+          <h3>Any comments you want to leave?</h3>
           <input
             onChange={handleCommentsChange}
             type="text"
             value={inputObject.comments}
-            placeholder="Comments?"
+            placeholder="Comments"
           />
           <nav ><Link to="/review" type="submit"></Link><button type="submit">Next</button></nav>
           </form>

@@ -26,10 +26,11 @@ function FeedbackReview () {
 
   return (
     <>
-    <p>{feedbackInput.feeling}</p>
-    <p>{feedbackInput.understanding}</p>
-    <p>{feedbackInput.support}</p>
-    <p>{feedbackInput.comments}</p>
+    <h2>Review your feedback</h2>
+    <p>Feelings: {feedbackInput.feeling}</p>
+    <p>Understanding: {feedbackInput.understanding}</p>
+    <p>Support: {feedbackInput.support}</p>
+    <p>Comments: {feedbackInput.comments}</p>
     <nav ><Link to="/success" type="submit"></Link><button onClick={handleSubmit}>Submit</button></nav>
    </>
   )   
