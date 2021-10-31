@@ -18,7 +18,6 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      </div>
 
       <Route path="/" exact>
       <FeelingForm />
@@ -43,7 +42,7 @@ function App() {
       <Route path="/success" exact>
       <FeedbackSuccess />
       </Route>
-      
+      </div>
     </Router>
   );
 }
