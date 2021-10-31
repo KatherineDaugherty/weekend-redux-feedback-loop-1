@@ -29,7 +29,12 @@ function UnderstandingForm () {
           type: "ADD_UNDERSTANDING",
           payload: inputObject.understanding,
         });
+        if (inputObject.understanding === "") {
+          alert("you must fill out form before proceeding")
+        }
+        else {
         history.push("/support");
+        }
     };
 
     return (
@@ -39,11 +44,14 @@ function UnderstandingForm () {
           <input
             onChange={handleUnderstandingChange}
             type="number"
+            min="0"
+            max="5"
             value={inputObject.understanding}
             placeholder="Understanding?"
           />
           
-          <nav ><Link to="/support" type="submit"></Link><button type="submit">Next</button></nav>
+          
+          <button type="submit">Next</button>
           
           </form>
         

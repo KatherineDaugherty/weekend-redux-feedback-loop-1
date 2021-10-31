@@ -26,7 +26,9 @@ const clearInputs = (event) => {
 return (
     <>
     <h2>Thank you! Your feedback has been recorded.</h2>
-    <nav ><Link to="/" type="submit"></Link><button onClick={clearInputs}>Leave New Feedback</button></nav>
+    
+    <button onClick={clearInputs}>Leave New Feedback</button>
+    
     </>
 )    
 

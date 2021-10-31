@@ -15,6 +15,7 @@ function FeelingForm () {
     });
 
     const handleFeelingChange = (event) => {
+
         setInputObject({
           ...inputObject,
           feeling: event.target.value,
@@ -24,13 +25,21 @@ function FeelingForm () {
     const collectFeelingInput = (event) => {
 
         event.preventDefault();
-    
+
         dispatch({
           type: "ADD_FEELING",
           payload: inputObject.feeling,
         });
+
+        if (inputObject.feeling === "") {
+          alert("you must fill out form before proceeding")
+        }
+        else {
         history.push("/understanding");
+        } 
     };
+
+   
 
     return (
       
@@ -39,14 +48,18 @@ function FeelingForm () {
           <input
             onChange={handleFeelingChange}
             type="number"
+            min="0"
+            max="5"
             value={inputObject.feeling}
             placeholder="Feeling?"
           />
-          <nav ><Link to="/understanding" type="submit"></Link><button type="submit">Next</button></nav>
+    
+          <button type="submit">Next</button>
+          
           </form>
         
         );
-  
+    
   }
 
 export default FeelingForm;

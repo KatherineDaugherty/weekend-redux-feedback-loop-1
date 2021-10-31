@@ -18,17 +18,24 @@ function SupportForm () {
           ...inputObject,
           support: event.target.value,
         });
+       
     };
 
     const collectSupportInput = (event) => {
 
-        event.preventDefault();
-    
-        dispatch({
-          type: "ADD_SUPPORT",
-          payload: inputObject.support,
-        });
-        history.push('/comments');
+        event.preventDefault()
+        
+          dispatch({
+            type: "ADD_SUPPORT",
+            payload: inputObject.support,
+          });
+        
+          if (inputObject.support === "") {
+            alert("you must fill out form before proceeding")
+          }
+          else{
+            history.push('/comments');
+          }
     };
 
     return (
@@ -38,6 +45,8 @@ function SupportForm () {
           <input
             onChange={handleSupportChange}
             type="number"
+            min="0"
+            max="5"
             value={inputObject.support}
             placeholder="Support?"
           />

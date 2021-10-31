@@ -42,7 +42,9 @@ function CommentsForm () {
             value={inputObject.comments}
             placeholder="Comments"
           />
-          <nav ><Link to="/review" type="submit"></Link><button type="submit">Next</button></nav>
+          
+          <button type="submit">Next</button>
+          
           </form>
         
         );

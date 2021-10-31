@@ -31,7 +31,9 @@ function FeedbackReview () {
     <p>Understanding: {feedbackInput.understanding}</p>
     <p>Support: {feedbackInput.support}</p>
     <p>Comments: {feedbackInput.comments}</p>
-    <nav ><Link to="/success" type="submit"></Link><button onClick={handleSubmit}>Submit</button></nav>
+    
+    <button onClick={handleSubmit}>Submit</button>
+   
    </>
   )   
 
